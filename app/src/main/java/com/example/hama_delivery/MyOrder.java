@@ -76,8 +76,6 @@ public class MyOrder  extends  BaseFragment{
                 textView.setTypeface(Typeface.DEFAULT_BOLD);
 
                 tabLayout.setTabIndicatorFullWidth(false);
-                active_order.setBackground(getResources().getDrawable(R.color.col));
-
 
             }
 

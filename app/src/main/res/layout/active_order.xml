@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_my_order"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/parent_my_order"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android.support.design="http://schemas.android.com/tools"
     android:orientation="vertical">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -34,50 +34,54 @@
             android:id="@+id/back_myorder1"
             android:layout_width="25dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="20dp"
             android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
             app:srcCompat="@drawable/back" />
     </androidx.appcompat.widget.Toolbar>
-
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="20dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="0dp"
+    android:clipToPadding="false">
     <com.google.android.material.tabs.TabLayout
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
         android:id="@+id/tab_my_order"
-        android:background="@drawable/back_tab"
-        app:tabSelectedTextColor="@color/blackcolor1"
-        app:tabIndicatorColor="@android:color/background_dark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabBackground="@drawable/drawable_selector_tab"
+        app:tabIndicatorColor="#00ffffff"
         app:tabIndicatorFullWidth="false"
-        android:layout_marginEnd="20dp"
-        app:tabTextColor="@color/color_store_page"
-        android:layout_height="wrap_content">
+        app:tabSelectedTextColor="@color/blackcolor1"
+        app:tabTextColor="@color/color_store_page">
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/active_orderr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/back_tab"
-            android:id="@+id/active_orderr"
             android:text="@string/Active_Orders" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/pending_order_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/pending_order_tab"
-            android:background="@drawable/back_tab"
             android:text="@string/Pending_Orders" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/cancel_tab"
             android:layout_width="wrap_content"
-            android:background="@drawable/back_tab"
             android:layout_height="wrap_content"
             android:text="@string/Returned_Orders" />
     </com.google.android.material.tabs.TabLayout>
 
+</androidx.cardview.widget.CardView>
+
     <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager_myorder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/view_pager_myorder"
         android:layout_margin="10dp" />
 
 

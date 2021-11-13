@@ -49,16 +49,22 @@
                     app:srcCompat="@drawable/ic_notification" />
 
             </androidx.appcompat.widget.Toolbar>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0dp"
+                android:clipToPadding="false">
             <com.google.android.material.tabs.TabLayout
                 android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="20dp"
                 android:id="@+id/tab_myorder"
-                android:background="@drawable/back_tab"
                 app:tabSelectedTextColor="@color/blackcolor1"
-                app:tabIndicatorColor="@android:color/background_dark"
+                app:tabIndicatorColor="#00ffffff"
                 app:tabIndicatorFullWidth="false"
-                android:layout_marginEnd="20dp"
+                app:tabBackground="@drawable/drawable_selector_tab"
                 app:tabTextColor="@color/color_store_page"
                 android:layout_height="wrap_content">
 
@@ -78,7 +84,7 @@
 
 
             </com.google.android.material.tabs.TabLayout>
-
+            </androidx.cardview.widget.CardView>
             <androidx.viewpager.widget.ViewPager
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

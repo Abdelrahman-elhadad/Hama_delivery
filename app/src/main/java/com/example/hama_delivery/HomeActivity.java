@@ -38,8 +38,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
         fragmentManager = getSupportFragmentManager();
        // myOrder = new MyOrder();
        // getSupportFragmentManager().beginTransaction().add( R.id.liner1, myOrder).commit() ;
-
-
+        bottomNavigationView.setSelectedItemId(R.id.page_1);
 
     }
 
