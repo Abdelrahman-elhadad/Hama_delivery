@@ -52,8 +52,8 @@ public class MyOrder  extends  BaseFragment{
 //           AdapterPagerMyOrder adapterPagerMyOrder = new AdapterPagerMyOrder(fragmentManager, tabLayout.getTabCount());
 //         setLightStatusBar();
         fragmentManager=getChildFragmentManager();
-//        AdapterPagerMyOrder adapterPagerMyOrder = new AdapterPagerMyOrder(fragmentManager,tabLayout.getTabCount());
-//        viewPager.setAdapter(adapterPagerMyOrder);
+        AdapterPagerMyOrder adapterPagerMyOrder = new AdapterPagerMyOrder(fragmentManager,tabLayout.getTabCount());
+        viewPager.setAdapter(adapterPagerMyOrder);
         tabLayout.setupWithViewPager(viewPager);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setTabIndicatorFullWidth(false);

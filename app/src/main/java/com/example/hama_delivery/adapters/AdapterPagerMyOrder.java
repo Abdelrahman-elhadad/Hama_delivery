@@ -22,12 +22,11 @@ public class AdapterPagerMyOrder  extends FragmentPagerAdapter {
             case 0:
                 return new ActiveOrderFragment();
             case 1:
-
-               // return new PendingFragment();
+                //return new PendingFragment();
             case 2:
-             //   return new CanceledFragment();
+                //return new CanceledFragment();
             default:
-                return null;
+                 return new ActiveOrderFragment();
 
 
         }

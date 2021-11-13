@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
@@ -45,7 +46,7 @@ public class ActiveOrderFragment extends BaseFragment {
         final View view = inflater.inflate(R.layout.active_order_fragment, container, false);
         fragmentManager=getChildFragmentManager();
         active_order_rv=(RecyclerView)view.findViewById(R.id.active_order_rv);
-
+        active_order_rv.setLayoutManager(new LinearLayoutManager(requireContext()));
 
 
         active_order_arrays = new ArrayList<>();

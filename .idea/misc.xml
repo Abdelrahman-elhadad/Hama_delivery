@@ -7,7 +7,7 @@
         <entry key="app/src/main/res/drawable/drawable_selected_tab.xml" value="0.2222222222222222" />
         <entry key="app/src/main/res/drawable/drawable_selector_tab.xml" value="0.25462962962962965" />
         <entry key="app/src/main/res/drawable/drawable_unselector_tab.xml" value="0.2222222222222222" />
-        <entry key="app/src/main/res/layout/active_order.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/active_order.xml" value="0.25" />
         <entry key="app/src/main/res/layout/active_order_fragment.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/home.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/my_profile.xml" value="0.13072916666666667" />
