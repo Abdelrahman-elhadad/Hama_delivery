@@ -49,8 +49,8 @@ public class MyOrder  extends  BaseFragment{
         pending = (TabItem) view.findViewById(R.id.pending_order_tab);
         canceled = (TabItem) view.findViewById(R.id.cancel_tab);
         viewPager = (ViewPager) view.findViewById(R.id.view_pager_myorder);
+
 //           AdapterPagerMyOrder adapterPagerMyOrder = new AdapterPagerMyOrder(fragmentManager, tabLayout.getTabCount());
-//         setLightStatusBar();
         fragmentManager=getChildFragmentManager();
         AdapterPagerMyOrder adapterPagerMyOrder = new AdapterPagerMyOrder(fragmentManager,tabLayout.getTabCount());
         viewPager.setAdapter(adapterPagerMyOrder);

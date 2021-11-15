@@ -60,7 +60,7 @@
                 android:clipToPadding="false">
             <com.google.android.material.tabs.TabLayout
                 android:layout_width="match_parent"
-                android:id="@+id/tab_myorder"
+                android:id="@+id/tab_order_tracking"
                 app:tabSelectedTextColor="@color/blackcolor1"
                 app:tabIndicatorColor="#00ffffff"
                 app:tabIndicatorFullWidth="false"
@@ -72,13 +72,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/back_tab"
-                    android:id="@+id/complete_tab"
+                    android:id="@+id/vendor_info"
                     android:text="@string/Vendors_Information" />
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/pending_order_tab"
+                    android:id="@+id/user_info"
                     android:background="@drawable/back_tab"
                     android:text="@string/User_Information" />
 
@@ -87,8 +87,8 @@
             </androidx.cardview.widget.CardView>
             <androidx.viewpager.widget.ViewPager
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/view_pager_myorder"
+                android:layout_height="470dp"
+                android:id="@+id/view_pager_order_tracking"
                 android:layout_margin="10dp" />
 
 

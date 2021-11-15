@@ -13,11 +13,12 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hama_delivery.R;
+import com.example.hama_delivery.fragment.OrderTracking;
 import com.example.hama_delivery.store.Active_order_array;
 
 import java.util.ArrayList;
 
-public class ActiveOrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ActiveOrderAdapter extends RecyclerView.Adapter<ActiveOrderAdapter.Holder> {
 
     ArrayList<Active_order_array> active_order_array;
     private String type;
@@ -33,15 +34,32 @@ public class ActiveOrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ActiveOrderAdapter.Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_active_order,null,false);
         ActiveOrderAdapter.Holder holder = new ActiveOrderAdapter.Holder(v);
         return new  ActiveOrderAdapter.Holder(v);    }
 
-
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull Holder holder, int position) {
+        holder.out_of_delivery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                OrderTracking orderTracking = new OrderTracking();
+
+
+
+            }
+        });
+
     }
+
+
+//    @Override
+//    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position,Holder holder1) {
+//        holder1.out_of_delivery.setText("");
+//
+//
+//    }
 
     @Override
     public int getItemCount() {
@@ -50,7 +68,7 @@ public class ActiveOrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
 
     public class Holder extends RecyclerView.ViewHolder {
-        TextView tv1;
+        TextView tv1 , out_of_delivery;
         View view;
         ImageView imageView;
 
@@ -61,6 +79,7 @@ public class ActiveOrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             imageView =(ImageView)itemView.findViewById(R.id.ring3);
             imageView =(ImageView)itemView.findViewById(R.id.ring4);
             tv1=(TextView)itemView.findViewById(R.id.gold_ring11);
+            out_of_delivery=(TextView)itemView.findViewById(R.id.out_of_delivery);
 
         }
     }

@@ -1,4 +1,4 @@
-package com.example.hama_delivery;
+package com.example.hama_delivery.fragment;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -17,11 +17,14 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.hama_delivery.BaseFragment;
+import com.example.hama_delivery.R;
 import com.example.hama_delivery.adapters.AdapterPagerMyProfile;
+import com.example.hama_delivery.adapters.OrderTrackingPagerAdapter;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
-public class MyProfile  extends  BaseFragment {
+public class OrderTracking extends BaseFragment {
     FragmentTransaction fragmentTransaction;
     static FragmentManager fragmentManager;
     ImageView imageback;
@@ -31,30 +34,29 @@ public class MyProfile  extends  BaseFragment {
     TextView txt_toolbar;
     LinearLayout parent_my_order;
     TabLayout tabLayout;
-    TabItem complited, pending, canceled;
-
+    TabItem vendor_info, user_info ;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //  return inflater.inflate(R.layout.active_order, container, false);
 
-        View view = inflater.inflate(R.layout.my_profile, container, false);
+        View view = inflater.inflate(R.layout.order_tracking, container, false);
 
         fragmentManager = getChildFragmentManager();
-        tabLayout = (TabLayout) view.findViewById(R.id.tab_my_profile);
-        complited = (TabItem) view.findViewById(R.id.complete_tab);
-        pending = (TabItem) view.findViewById(R.id.pending_order_tab);
-        canceled = (TabItem) view.findViewById(R.id.cancel_tab);
-        viewPager = (ViewPager) view.findViewById(R.id.view_pager_myorder);
-           AdapterPagerMyProfile adapterPagerMyProfile = new AdapterPagerMyProfile(fragmentManager, tabLayout.getTabCount());
-        viewPager.setAdapter(adapterPagerMyProfile);
+        tabLayout = (TabLayout) view.findViewById(R.id.tab_order_tracking);
+        vendor_info = (TabItem) view.findViewById(R.id.vendor_info);
+        user_info = (TabItem) view.findViewById(R.id.user_info);
+        viewPager = (ViewPager) view.findViewById(R.id.view_pager_order_tracking);
+
+        //////
+        OrderTrackingPagerAdapter orderTrackingPagerAdapter = new OrderTrackingPagerAdapter(fragmentManager, tabLayout.getTabCount());
+        viewPager.setAdapter(orderTrackingPagerAdapter);
 
         tabLayout.setupWithViewPager(viewPager);
         fragmentManager = getChildFragmentManager();
         tabLayout.setTabIndicatorFullWidth(false);
-        tabLayout.getTabAt(0).setText(R.string.Completed);
-        tabLayout.getTabAt(1).setText(R.string.pending);
-        tabLayout.getTabAt(2).setText(R.string.canceled);
+        tabLayout.getTabAt(0).setText(R.string.vendor);
+        tabLayout.getTabAt(1).setText(R.string.user);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
 
             @Override
@@ -101,5 +103,4 @@ public class MyProfile  extends  BaseFragment {
 
 
     }
-
 }

@@ -31,6 +31,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:id="@+id/vendor_info_rv"
         tools:listitem="@layout/card_jawaher_store"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

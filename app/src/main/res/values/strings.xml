@@ -61,6 +61,11 @@
     <string name="Completed">Completed</string>
     <string name="pending">pending</string>
     <string name="canceled">canceled</string>
+    <string name="vendor">Vendors Information</string>
+    <string name="user">User Information</string>
+    <string name="Scan_Package">Scan Package</string>
+    <string name="sscan">Scan to Deliver</string>
+    <string name="Language_Settings19">TRACK ON MAP</string>
 
 
 </resources>

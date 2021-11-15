@@ -25,5 +25,9 @@
     <color name="glgl">#EBF0FF</color>
     <color name="bvb">#6E571D</color>
     <color name="rating">#FED700</color>
+    <color name="color_navigation">#82B59C</color>
+    <color name="color_navigation1">#D0D7E6</color>
+    <color name="bnbnb">#00181E</color>
+
 
 </resources>

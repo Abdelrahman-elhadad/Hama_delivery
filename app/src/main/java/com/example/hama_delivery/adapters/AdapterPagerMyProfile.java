@@ -9,10 +9,10 @@ import com.example.hama_delivery.fragment.ActiveOrderFragment;
 import com.example.hama_delivery.fragment.PendingFragment;
 import com.example.hama_delivery.fragment.ReturnedFragment;
 
-public class AdapterPagerMyOrder  extends FragmentPagerAdapter {
+public class AdapterPagerMyProfile   extends FragmentPagerAdapter {
     private int number_of_Tab;
 
-    public AdapterPagerMyOrder(@NonNull FragmentManager fm, int number_of_Tab) {
+    public AdapterPagerMyProfile(@NonNull FragmentManager fm, int number_of_Tab) {
         super(fm);
         this.number_of_Tab = number_of_Tab;
     }
@@ -28,34 +28,13 @@ public class AdapterPagerMyOrder  extends FragmentPagerAdapter {
             case 2:
                 return new ReturnedFragment();
             default:
-                 return new ActiveOrderFragment();
+                return new ActiveOrderFragment();
 
 
-        }
-    }
+        }    }
 
     @Override
     public int getCount() {
         return number_of_Tab;
     }
-
-
-    @Override
-    public CharSequence getPageTitle(int position) {
-        switch (position) {
-            case 0:
-                return "Complited";
-            case 1:
-                return   "Pending";
-            case 3:
-                return "canceled";
-            default:
-                return "canceled";
-        }
-    }
-
-//    public AdapterPagerMyOrder(@NonNull FragmentManager fm, int behavior, int number_of_Tab) {
-//        super(fm, behavior);
-//        this.number_of_Tab = number_of_Tab;
-//    }
 }

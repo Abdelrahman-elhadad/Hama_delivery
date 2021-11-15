@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
+        android:id="@+id/returned_rv"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/card_returned_order"
         app:layout_constraintEnd_toEndOf="parent"
