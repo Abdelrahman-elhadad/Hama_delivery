@@ -1,5 +1,6 @@
 package com.example.hama_delivery.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,13 +19,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.hama_delivery.BaseFragment;
+import com.example.hama_delivery.OrderTrackingListener;
 import com.example.hama_delivery.R;
 import com.example.hama_delivery.adapters.ActiveOrderAdapter;
 import com.example.hama_delivery.store.Active_order_array;
 
 import java.util.ArrayList;
 
-public class ActiveOrderFragment extends BaseFragment {
+public class ActiveOrderFragment extends BaseFragment implements OrderTrackingListener {
     FragmentTransaction fragmentTransaction;
     static FragmentManager fragmentManager;
     ImageView imageback;
@@ -60,7 +62,7 @@ public class ActiveOrderFragment extends BaseFragment {
         active_order_arrays.add(bs1);
         active_order_arrays.add(bs2);
         active_order_arrays.add(bs3);
-        ActiveOrderAdapter activeOrderAdapter = new ActiveOrderAdapter(active_order_arrays,"active ordr");
+        ActiveOrderAdapter activeOrderAdapter = new ActiveOrderAdapter(active_order_arrays,"active ordr",this);
         active_order_rv.setAdapter(activeOrderAdapter);
         return view;
 
@@ -72,6 +74,15 @@ public class ActiveOrderFragment extends BaseFragment {
 
         fragmentManager = getFragmentManager();
 
+
+    }
+
+    @Override
+    public void OrderTrackingListener(int position, String tag) {
+
+        Intent intent = new Intent(getActivity(), OrderTracking.class);
+//        intent.putExtra("EXTRA_ID", item.getId());
+        startActivity(intent);
 
     }
 }

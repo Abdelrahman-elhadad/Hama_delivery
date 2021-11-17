@@ -1,6 +1,7 @@
 package com.example.hama_delivery.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.hama_delivery.OrderTrackingListener;
 import com.example.hama_delivery.R;
 import com.example.hama_delivery.fragment.OrderTracking;
 import com.example.hama_delivery.store.Active_order_array;
@@ -25,11 +27,13 @@ public class ActiveOrderAdapter extends RecyclerView.Adapter<ActiveOrderAdapter.
     FragmentManager fragmentManager;
     Context context;
     FragmentTransaction fragmentTransaction;
+    OrderTrackingListener orderTrackingListener;
 
 
-    public ActiveOrderAdapter(ArrayList<Active_order_array> active_order_array, String type) {
+    public ActiveOrderAdapter(ArrayList<Active_order_array> active_order_array, String type ,OrderTrackingListener orderTrackingListener) {
         this.active_order_array = active_order_array;
         this.type = type;
+        this.orderTrackingListener = orderTrackingListener;
     }
 
     @NonNull
@@ -67,7 +71,7 @@ public class ActiveOrderAdapter extends RecyclerView.Adapter<ActiveOrderAdapter.
     }
 
 
-    public class Holder extends RecyclerView.ViewHolder {
+    public class Holder extends RecyclerView.ViewHolder implements OrderTrackingListener {
         TextView tv1 , out_of_delivery;
         View view;
         ImageView imageView;
@@ -80,6 +84,15 @@ public class ActiveOrderAdapter extends RecyclerView.Adapter<ActiveOrderAdapter.
             imageView =(ImageView)itemView.findViewById(R.id.ring4);
             tv1=(TextView)itemView.findViewById(R.id.gold_ring11);
             out_of_delivery=(TextView)itemView.findViewById(R.id.out_of_delivery);
+            itemView.setOnClickListener((View.OnClickListener) this);
+
+
+        }
+
+        @Override
+        public void OrderTrackingListener(int position, String tag) {
+
+
 
         }
     }
