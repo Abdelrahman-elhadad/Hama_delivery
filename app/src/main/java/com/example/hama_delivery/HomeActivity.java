@@ -9,6 +9,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.hama_delivery.fragment.OrderTracking;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -18,9 +20,12 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
     static FragmentManager fragmentManager;
     BottomNavigationView bottomNavigationView;
     DrawerLayout drawerLayout;
-    public static final int Home = 0;
-    public static final int MyProfile = 1;
-   // private  MyOrder myOrder;
+    public final int Home = 0;
+    public final int MyProfile = 1;
+    public final int OrderTrack = 2;
+
+    public static int position;
+    // private  MyOrder myOrder;
 
 
     // public static int position = HomeActivity;
@@ -36,17 +41,29 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
         // bottomNavigationView.setItemIconTintList(null);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         fragmentManager = getSupportFragmentManager();
-       // myOrder = new MyOrder();
-       // getSupportFragmentManager().beginTransaction().add( R.id.liner1, myOrder).commit() ;
+        // myOrder = new MyOrder();
+        // getSupportFragmentManager().beginTransaction().add( R.id.liner1, myOrder).commit() ;
         bottomNavigationView.setSelectedItemId(R.id.page_1);
 
     }
 
     private void commitFragment(Fragment fragment, int position) {
-       // HomeActivity.position = position;
+        HomeActivity.position = position;
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.liner1, fragment);
         fragmentTransaction.commit();
+    }
+
+    public void openOrderTrack() {
+        commitFragment(new OrderTracking(), OrderTrack);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (position != Home)
+            commitFragment(new MyOrder(), Home);
+        else
+            super.onBackPressed();
     }
 
     @Override

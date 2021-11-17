@@ -1,6 +1,5 @@
 package com.example.hama_delivery.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.hama_delivery.BaseFragment;
+import com.example.hama_delivery.HomeActivity;
 import com.example.hama_delivery.OrderTrackingListener;
 import com.example.hama_delivery.R;
 import com.example.hama_delivery.adapters.ActiveOrderAdapter;
@@ -46,23 +46,23 @@ public class ActiveOrderFragment extends BaseFragment implements OrderTrackingLi
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         final View view = inflater.inflate(R.layout.active_order_fragment, container, false);
-        fragmentManager=getChildFragmentManager();
-        active_order_rv=(RecyclerView)view.findViewById(R.id.active_order_rv);
+        fragmentManager = getChildFragmentManager();
+        active_order_rv = (RecyclerView) view.findViewById(R.id.active_order_rv);
         active_order_rv.setLayoutManager(new LinearLayoutManager(requireContext()));
 
 
         active_order_arrays = new ArrayList<>();
 
-        Active_order_array bs = new Active_order_array(R.drawable.khateem ,"sbrena");
-        Active_order_array bs1 = new Active_order_array(R.drawable.khateem ,"sbrena");
-        Active_order_array bs2 = new Active_order_array(R.drawable.khateem ,"sbrena");
-        Active_order_array bs3 = new Active_order_array(R.drawable.khateem ,"sbrena");
+        Active_order_array bs = new Active_order_array(R.drawable.khateem, "sbrena");
+        Active_order_array bs1 = new Active_order_array(R.drawable.khateem, "sbrena");
+        Active_order_array bs2 = new Active_order_array(R.drawable.khateem, "sbrena");
+        Active_order_array bs3 = new Active_order_array(R.drawable.khateem, "sbrena");
 
         active_order_arrays.add(bs);
         active_order_arrays.add(bs1);
         active_order_arrays.add(bs2);
         active_order_arrays.add(bs3);
-        ActiveOrderAdapter activeOrderAdapter = new ActiveOrderAdapter(active_order_arrays,"active ordr",this);
+        ActiveOrderAdapter activeOrderAdapter = new ActiveOrderAdapter(active_order_arrays, "active ordr", this);
         active_order_rv.setAdapter(activeOrderAdapter);
         return view;
 
@@ -80,9 +80,13 @@ public class ActiveOrderFragment extends BaseFragment implements OrderTrackingLi
     @Override
     public void OrderTrackingListener(int position, String tag) {
 
-        Intent intent = new Intent(getActivity(), OrderTracking.class);
+        // Intent intent = new Intent(getActivity(), OrderTracking.class);
 //        intent.putExtra("EXTRA_ID", item.getId());
-        startActivity(intent);
+        // startActivity(intent);
+
+
+        if (getActivity() != null)
+            ((HomeActivity)getActivity()).openOrderTrack();
 
     }
 }

@@ -12,11 +12,12 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 public class Login  extends BaseActivity {
 
     Switch aSwitch;
-    Button btnLogin;
+    AppCompatButton btnLogin;
     TextView forget, wellcome, signin, use, dont, signup;
     ImageView img_back;
     EditText user_name, edit_password;

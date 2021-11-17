@@ -71,7 +71,7 @@ public class ActiveOrderAdapter extends RecyclerView.Adapter<ActiveOrderAdapter.
     }
 
 
-    public class Holder extends RecyclerView.ViewHolder implements OrderTrackingListener {
+    public class Holder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView tv1 , out_of_delivery;
         View view;
         ImageView imageView;
@@ -89,11 +89,10 @@ public class ActiveOrderAdapter extends RecyclerView.Adapter<ActiveOrderAdapter.
 
         }
 
+
         @Override
-        public void OrderTrackingListener(int position, String tag) {
-
-
-
+        public void onClick(View v) {
+            orderTrackingListener.OrderTrackingListener(getAdapterPosition(),"tag");
         }
     }
 }

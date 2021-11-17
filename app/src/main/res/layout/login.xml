@@ -113,7 +113,7 @@
                     android:textSize="13sp" />
             </RelativeLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_login"
                 android:layout_width="172dp"
                 android:layout_height="45dp"

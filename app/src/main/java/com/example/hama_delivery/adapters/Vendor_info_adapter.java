@@ -1,13 +1,18 @@
 package com.example.hama_delivery.adapters;
 
 import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.hama_delivery.R;
 import com.example.hama_delivery.store.pending_order_array;
 import com.example.hama_delivery.store.vendor_info;
 
@@ -28,7 +33,9 @@ public class Vendor_info_adapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_jawaher_store,parent,false);
+        return new Holder(v);
     }
 
     @Override
@@ -40,4 +47,30 @@ public class Vendor_info_adapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public int getItemCount() {
         return vendor_infoArrayList.size();
     }
+
+    public class Holder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        TextView tv1 , out_of_delivery;
+        View view;
+        ImageView imageView;
+
+        public Holder(@NonNull View itemView) {
+            super(itemView);
+            imageView =(ImageView)itemView.findViewById(R.id.ring1);
+            imageView =(ImageView)itemView.findViewById(R.id.ring2);
+            imageView =(ImageView)itemView.findViewById(R.id.ring3);
+            imageView =(ImageView)itemView.findViewById(R.id.ring4);
+            tv1=(TextView)itemView.findViewById(R.id.gold_ring11);
+            out_of_delivery=(TextView)itemView.findViewById(R.id.out_of_delivery);
+            itemView.setOnClickListener((View.OnClickListener) this);
+
+
+        }
+
+
+        @Override
+        public void onClick(View v) {
+
+        }
+    }
+
 }
