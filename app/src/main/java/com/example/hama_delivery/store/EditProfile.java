@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.hama_delivery.BaseActivity;
+import com.example.hama_delivery.base.BaseActivity;
 import com.example.hama_delivery.R;
 
 public class EditProfile extends BaseActivity {
