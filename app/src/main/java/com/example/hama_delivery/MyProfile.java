@@ -18,13 +18,14 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.hama_delivery.adapters.AdapterPagerMyProfile;
+import com.example.hama_delivery.fragment.EditProfile;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
 public class MyProfile  extends  BaseFragment {
     FragmentTransaction fragmentTransaction;
     static FragmentManager fragmentManager;
-    ImageView imageback;
+    ImageView imageback , edit_icon;
     Button orderTracking;
     ViewPager viewPager;
     //ArrayList<MyorderArray> myordersArray;
@@ -46,6 +47,20 @@ public class MyProfile  extends  BaseFragment {
         pending = (TabItem) view.findViewById(R.id.pending_order_tab);
         canceled = (TabItem) view.findViewById(R.id.cancel_tab);
         viewPager = (ViewPager) view.findViewById(R.id.view_pager_myorder);
+        edit_icon =(ImageView)view.findViewById(R.id.edit_icon);
+
+        edit_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragmentTransaction = fragmentManager.beginTransaction();
+                                             fragmentTransaction.replace(R.id.liner1, new EditProfile());
+                                           //  fragmentTransaction.addToBackStack(null);
+                                             fragmentTransaction.commit();
+
+            }
+        });
+
+
            AdapterPagerMyProfile adapterPagerMyProfile = new AdapterPagerMyProfile(fragmentManager, tabLayout.getTabCount());
         viewPager.setAdapter(adapterPagerMyProfile);
 
@@ -87,6 +102,8 @@ public class MyProfile  extends  BaseFragment {
             }
 
         });
+
+
 
         return view;
 
