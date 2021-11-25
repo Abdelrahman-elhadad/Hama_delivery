@@ -14,11 +14,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.hama_delivery.R;
 import com.example.hama_delivery.adapters.AdapterPagerMyProfile;
-import com.example.hama_delivery.base.BaseFragment;
-import com.example.hama_delivery.databinding.MyProfileBinding;
-import com.example.hama_delivery.listener.LoginListener;
-import com.example.hama_delivery.utils.SharedPreferenceConstant;
-import com.example.hama_delivery.utils.image.CircleTransform;
+import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 import com.squareup.picasso.Picasso;
 
