@@ -18,19 +18,17 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.hama_delivery.adapters.AdapterPagerMyOrder;
+import com.example.hama_delivery.base.BaseFragment;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
-import java.util.ArrayList;
-
-public class MyOrder  extends  BaseFragment{
+public class MyOrder  extends BaseFragment {
 
     FragmentTransaction fragmentTransaction;
     static FragmentManager fragmentManager;
     ImageView imageback;
     Button orderTracking;
     ViewPager viewPager;
-    //ArrayList<MyorderArray> myordersArray;
     TextView txt_toolbar;
     LinearLayout parent_my_order;
     TabLayout tabLayout;

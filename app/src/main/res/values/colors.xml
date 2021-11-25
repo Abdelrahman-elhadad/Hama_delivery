@@ -29,5 +29,12 @@
     <color name="color_navigation1">#D0D7E6</color>
     <color name="bnbnb">#00181E</color>
 
+    <color name="color_light_shimmer">#1098BDAB</color>
+    <color name="color_light_mask">#3598BDAB</color>
 
+    <color name="color_buttom_navigation2">#D3D3D3</color>
+
+    <color name="filter_by">#223263</color>
+    <color name="filter_b1y">#D0D7e6</color>
+    <color name="filter_b11y">#F9F6ED</color>
 </resources>

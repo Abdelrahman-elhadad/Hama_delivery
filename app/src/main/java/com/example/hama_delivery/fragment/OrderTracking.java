@@ -17,9 +17,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.hama_delivery.BaseFragment;
+import com.example.hama_delivery.base.BaseFragment;
 import com.example.hama_delivery.R;
-import com.example.hama_delivery.adapters.AdapterPagerMyProfile;
 import com.example.hama_delivery.adapters.OrderTrackingPagerAdapter;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;

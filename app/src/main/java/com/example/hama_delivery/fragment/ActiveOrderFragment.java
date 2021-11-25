@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.hama_delivery.BaseFragment;
+import com.example.hama_delivery.base.BaseFragment;
 import com.example.hama_delivery.HomeActivity;
 import com.example.hama_delivery.OrderTrackingListener;
 import com.example.hama_delivery.R;

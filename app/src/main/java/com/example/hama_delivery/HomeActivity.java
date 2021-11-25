@@ -10,7 +10,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.hama_delivery.base.BaseActivity;
 import com.example.hama_delivery.fragment.OrderTracking;
+import com.example.hama_delivery.view.profile.MyProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -41,9 +43,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
         // bottomNavigationView.setItemIconTintList(null);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         fragmentManager = getSupportFragmentManager();
-        // myOrder = new MyOrder();
-        // getSupportFragmentManager().beginTransaction().add( R.id.liner1, myOrder).commit() ;
-        bottomNavigationView.setSelectedItemId(R.id.page_1);
+       bottomNavigationView.setSelectedItemId(R.id.it_home);
 
     }
 
@@ -68,14 +68,14 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        if (menuItem.getItemId() == R.id.page_1) {
+        if (menuItem.getItemId() == R.id.it_home) {
             commitFragment(new MyOrder(), Home);
             Log.e(TAG, "home1" + menuItem.getItemId());
 
             return true;
         }
-        if (menuItem.getItemId() == R.id.page_2) {
-            commitFragment(new MyProfile(), MyProfile);
+        if (menuItem.getItemId() == R.id.item_profile) {
+            commitFragment(new MyProfileFragment(), MyProfile);
             Log.e(TAG, "my profile" + menuItem.getItemId());
             return true;
         }

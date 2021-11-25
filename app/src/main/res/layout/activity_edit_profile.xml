@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.hama_delivery.view.profile.ProfileViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/parent_edit_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/transperant">
+
+            <ImageView
+                android:id="@+id/imageView_back"
+                android:layout_width="25dp"
+                android:layout_height="23dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="20dp"
+                app:srcCompat="@drawable/back" />
+
+            <TextView
+                android:id="@+id/txt_toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/cairobold"
+                android:text="@string/Edit_Profile"
+                android:textColor="@color/blackcolor1"
+                android:textSize="20dp" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/cairobold"
+                    android:text="@string/Personal_Information"
+                    android:textColor="@color/black"
+                    android:textSize="18sp">
+
+                </TextView>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_profile"
+                    android:layout_width="125dp"
+                    android:layout_height="125dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/iv_profile"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/app_name"
+                        app:srcCompat="@drawable/ic_default_user" />
+
+                    <View
+                        android:id="@+id/view_image"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:background="@drawable/shape_oval_ttee" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_edit"
+                        android:layout_width="35dp"
+                        android:layout_height="24dp"
+                        android:layout_alignBottom="@+id/view_image"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_camera"
+                        android:scaleType="fitXY"/>
+
+                </RelativeLayout>
+
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="360dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/back_edit_txt"
+                    android:ems="10"
+                    android:hint="@string/complint3"
+                    android:inputType="textPersonName"
+                    android:padding="10dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="@{model.userName}"
+                    android:textSize="14sp"
+                    app:addTextChangedListener="@{model.userNameTextWatcher}" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="360dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/back_edit_txt"
+                        android:ems="10"
+                        android:gravity="start"
+                        android:hint="@string/edit_profile4"
+                        android:text="@{model.birthDate}"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="20dp"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView31"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_date"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_date"
+                        app:layout_constraintHorizontal_bias="0.939"
+                        app:layout_constraintStart_toStartOf="@+id/tv_date"
+                        app:layout_constraintTop_toTopOf="@+id/tv_date"
+                        app:layout_constraintVertical_bias="0.476"
+                        app:srcCompat="@drawable/ic_calendar" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <EditText
+                    android:id="@+id/et_address"
+                    android:layout_width="360dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/back_edit_txt"
+                    android:ems="10"
+                    android:hint="@string/complint7"
+                    android:inputType="textPersonName"
+                    android:padding="10dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="@{model.address}"
+                    android:textSize="14sp"
+                    app:addTextChangedListener="@{model.addressTextWatcher}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/cairobold"
+                    android:text="@string/Your_Delivery_Cities"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_cities"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="96dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/cairobold"
+                    android:text="@string/change_your_password"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+
+                <EditText
+                    android:id="@+id/et_current_password"
+                    android:layout_width="360dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/back_edit_txt"
+                    android:ems="10"
+                    android:hint="@string/current_password"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textSize="14sp"
+                    app:addTextChangedListener="@{model.passwordNewTextWatcher}" />
+                <EditText
+                    android:id="@+id/et_new_password"
+                    android:layout_width="360dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/back_edit_txt"
+                    android:ems="10"
+                    android:hint="@string/new_password"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textSize="14sp"
+                    app:addTextChangedListener="@{model.passwordNewTextWatcher}" />
+                <EditText
+                    android:id="@+id/et_confirm_password"
+                    android:layout_width="360dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/back_edit_txt"
+                    android:ems="10"
+                    android:hint="@string/confirm_new_password"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textSize="14sp"
+                    app:addTextChangedListener="@{model.confirmPasswordNewTextWatcher}" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/liner_btn"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:background="@drawable/back_liner"
+            android:elevation="3dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_update"
+                android:layout_width="265dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:background="@drawable/back_btn"
+                android:text="@string/submit"
+                android:onClick="@{model::onUpdateProfileClick}"
+                android:visibility="@{model.loginVisibility}"
+                android:textColor="@color/whiteColor"
+                android:textSize="16sp" />
+
+            <ProgressBar
+                android:id="@+id/pb_update"
+                android:layout_width="265dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:background="@drawable/back_btn"
+                android:text="@string/submit"
+                android:textColor="@color/whiteColor"
+                android:textSize="16sp"
+                android:visibility="@{model.pbLoginVisibility}"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

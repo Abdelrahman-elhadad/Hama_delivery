@@ -1,4 +1,4 @@
-package com.example.hama_delivery;
+package com.example.hama_delivery.base;
 
 import android.os.Build;
 import android.os.Bundle;

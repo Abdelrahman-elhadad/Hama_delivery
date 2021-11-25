@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.hama_delivery.view.auth.LoginActivityViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/liner1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/transparent_color" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="77dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="70dp"
+                    android:background="@drawable/hamalogo" />
+
+                <TextView
+                    android:id="@+id/well_come"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/cairobold"
+                    android:gravity="center"
+                    android:text="@string/our"
+                    android:textColor="@color/akhdar"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/sign_in"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/cairoregular"
+                    android:gravity="center"
+                    android:text="@string/Language_Settings4"
+                    android:textColor="@color/blackcolor"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/back_edit_txt"
+                    android:ems="10"
+                    android:hint="@string/email"
+                    android:inputType="textPersonName"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="10dp"
+                    android:textSize="15sp"
+                    app:addTextChangedListener="@{model.userNameTextWatcher}" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:gravity="center">
+
+                    <EditText
+                        android:id="@+id/edit_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_gravity="start"
+                        android:background="@drawable/back_edit_txt"
+                        android:ems="10"
+                        android:hint="@string/pass"
+                        android:inputType="textPassword"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="10dp"
+                        android:textAlignment="viewStart"
+                        android:textSize="15sp"
+                        app:addTextChangedListener="@{model.passwordTextWatcher}" />
+
+                    <TextView
+                        android:id="@+id/forget"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/cairoregular"
+                        android:onClick="@{model::onForgetPasswordClick}"
+                        android:text="@string/Language_Settings5"
+                        android:textColor="@color/textviewhome"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_login"
+                    android:layout_width="wrap_content"
+                    android:minWidth="172dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="23dp"
+                    android:background="@drawable/back_btn"
+                    android:fontFamily="@font/cairobold"
+                    android:gravity="center"
+                    android:onClick="@{model::onLoginClick}"
+                    android:text="@string/login"
+                    android:textAllCaps="false"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="13sp"
+                    android:visibility="@{model.loginVisibility}"/>
+
+                <ProgressBar
+                    android:id="@+id/pb_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="43dp"
+                    android:minWidth="170dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="23dp"
+                    android:background="@drawable/back_btn"
+                    android:padding="5dp"
+                    android:visibility="@{model.pbLoginVisibility}" />
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+</layout>

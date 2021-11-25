@@ -17,11 +17,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.hama_delivery.BaseFragment;
+import com.example.hama_delivery.base.BaseFragment;
 import com.example.hama_delivery.R;
-import com.example.hama_delivery.adapters.PendingOrderAdapter;
 import com.example.hama_delivery.adapters.Vendor_info_adapter;
-import com.example.hama_delivery.store.pending_order_array;
 import com.example.hama_delivery.store.vendor_info;
 
 import java.util.ArrayList;

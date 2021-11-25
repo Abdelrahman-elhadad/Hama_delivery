@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.hama_delivery.BaseFragment;
+import com.example.hama_delivery.base.BaseFragment;
 import com.example.hama_delivery.R;
 
 public class notifications extends BaseFragment {

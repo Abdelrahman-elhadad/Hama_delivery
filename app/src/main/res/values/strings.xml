@@ -67,5 +67,15 @@
     <string name="sscan">Scan to Deliver</string>
     <string name="Language_Settings19">TRACK ON MAP</string>
 
+    <string name="gps_setting_title"> GPS is settings</string>
+    <string name="gps_setting_msg"> GPS is not enabled. Do you want to go to settings menu?</string>
+    <string name="setting">settings</string>
+
+    <string name="not_login">Your not Login , to continue please Login...</string>
+    <string name="change_your_password">Change Your Password</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+
 
 </resources>
