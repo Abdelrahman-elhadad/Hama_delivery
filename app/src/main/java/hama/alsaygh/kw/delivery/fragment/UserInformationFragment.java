@@ -16,7 +16,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
-import hama.alsaygh.kw.delivery.base.BaseFragment;
+import hama.alsaygh.kw.delivery.view.base.BaseFragment;
 import hama.alsaygh.kw.delivery.R;
 import hama.alsaygh.kw.delivery.store.pending_order_array;
 

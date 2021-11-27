@@ -3,7 +3,7 @@ package hama.alsaygh.kw.delivery.view.splash;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
 
-import hama.alsaygh.kw.delivery.base.BaseActivity;
+import hama.alsaygh.kw.delivery.view.base.BaseActivity;
 import hama.alsaygh.kw.delivery.databinding.ActivityMainBinding;
 
 public class SplashActivity extends BaseActivity {

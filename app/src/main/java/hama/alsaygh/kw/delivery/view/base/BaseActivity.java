@@ -1,4 +1,4 @@
-package hama.alsaygh.kw.delivery.base;
+package hama.alsaygh.kw.delivery.view.base;
 
 import android.graphics.Color;
 import android.os.Build;
@@ -7,6 +7,8 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import hama.alsaygh.kw.delivery.utils.LocalUtils;
 
 public class BaseActivity  extends AppCompatActivity {
 
@@ -18,7 +20,13 @@ public class BaseActivity  extends AppCompatActivity {
 
     }
 
-//    private void setStatusBarColorDark() {
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LocalUtils.getInstance().updateResources(this, LocalUtils.getInstance().getLanguageShort(this));
+
+    }
+    //    private void setStatusBarColorDark() {
 //        Window window = getWindow();
 //        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 //        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);

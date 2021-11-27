@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
-import hama.alsaygh.kw.delivery.base.BaseFragment;
+import hama.alsaygh.kw.delivery.view.base.BaseFragment;
 import hama.alsaygh.kw.delivery.R;
 import hama.alsaygh.kw.delivery.adapters.Vendor_info_adapter;
 import hama.alsaygh.kw.delivery.store.vendor_info;

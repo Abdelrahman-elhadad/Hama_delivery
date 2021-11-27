@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import hama.alsaygh.kw.delivery.listener.OnCityListener;
 import hama.alsaygh.kw.delivery.R;
 import hama.alsaygh.kw.delivery.adapters.city.CityAdapter;
-import hama.alsaygh.kw.delivery.base.BaseActivity;
+import hama.alsaygh.kw.delivery.view.base.BaseActivity;
 import hama.alsaygh.kw.delivery.databinding.ActivityEditProfileBinding;
 import hama.alsaygh.kw.delivery.dialog.LoginDialog;
 import hama.alsaygh.kw.delivery.model.country.City;

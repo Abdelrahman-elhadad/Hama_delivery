@@ -10,7 +10,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import hama.alsaygh.kw.delivery.R;
-import hama.alsaygh.kw.delivery.base.BaseActivity;
+import hama.alsaygh.kw.delivery.view.base.BaseActivity;
+import hama.alsaygh.kw.delivery.databinding.ActivityHomeBinding;
 import hama.alsaygh.kw.delivery.fragment.OrderTracking;
 import hama.alsaygh.kw.delivery.view.order.MyOrderFragment;
 import hama.alsaygh.kw.delivery.view.profile.MyProfileFragment;
@@ -18,39 +19,36 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener {
-    private static final String TAG = "Home11";
-    private FragmentTransaction fragmentTransaction;
+    private static final String TAG = "HomeActivity";
     private   FragmentManager fragmentManager;
-    BottomNavigationView bottomNavigationView;
+
     public final int Home = 0;
     public final int MyProfile = 1;
     public final int OrderTrack = 2;
 
     public static int position;
-    // private  MyOrder myOrder;
-
-
-    // public static int position = HomeActivity;
-
+   ActivityHomeBinding binding;
+    HomeViewModel model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //LocalUtils.getInstance().updateResources(this, LocalUtils.getInstance().getLanguageShort(this));
-        setContentView(R.layout.activity_home);
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.buttom_nav);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+       binding= ActivityHomeBinding.inflate(getLayoutInflater());
+       setContentView(binding.getRoot());
+        model=new HomeViewModel(this);
+        binding.setModel(model);
+        binding.buttomNav.setOnNavigationItemSelectedListener(this);
         // bottomNavigationView.setItemIconTintList(null);
 
         fragmentManager = getSupportFragmentManager();
-       bottomNavigationView.setSelectedItemId(R.id.it_home);
+        binding.buttomNav.setSelectedItemId(R.id.it_home);
 
     }
 
     private void commitFragment(Fragment fragment, int position) {
         HomeActivity.position = position;
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.liner1, fragment);
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fl_replace, fragment);
         fragmentTransaction.commit();
     }
 

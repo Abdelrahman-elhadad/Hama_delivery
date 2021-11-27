@@ -6,7 +6,7 @@
 
         <variable
             name="model"
-            type="hama.alsaygh.kw.delivery.view.order.OrderViewModel" />
+            type="hama.alsaygh.kw.delivery.view.home.HomeViewModel" />
 
     </data>
 
@@ -16,7 +16,7 @@
 
 
         <FrameLayout
-            android:id="@+id/liner1"
+            android:id="@+id/fl_replace"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@+id/buttom_nav"

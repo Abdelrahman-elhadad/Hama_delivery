@@ -1,4 +1,4 @@
-package hama.alsaygh.kw.delivery.base;
+package hama.alsaygh.kw.delivery.view.base;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import hama.alsaygh.kw.delivery.utils.LocalUtils;
 
 public class BaseFragment extends Fragment {
     @Override
@@ -32,6 +34,13 @@ public class BaseFragment extends Fragment {
 //        window.setStatusBarColor(ContextCompat.getColor(getActivity(), R.color.sign_in));
 //
 //
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        LocalUtils.getInstance().updateResources(requireContext(), LocalUtils.getInstance().getLanguageShort(requireContext()));
+
     }
 
     private void setLightStatusBar() {

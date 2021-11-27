@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentManager;
 
 import hama.alsaygh.kw.delivery.adapters.pagerAdapter.OrderPagerAdapter;
-import hama.alsaygh.kw.delivery.base.BaseFragment;
+import hama.alsaygh.kw.delivery.view.base.BaseFragment;
 import hama.alsaygh.kw.delivery.databinding.MyOrderFragmentBinding;
 import com.google.android.material.tabs.TabLayout;
 

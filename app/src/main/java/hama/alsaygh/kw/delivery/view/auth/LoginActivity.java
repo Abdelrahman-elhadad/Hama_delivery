@@ -6,7 +6,7 @@ import android.view.View;
 
 import hama.alsaygh.kw.delivery.view.home.HomeActivity;
 import hama.alsaygh.kw.delivery.R;
-import hama.alsaygh.kw.delivery.base.BaseActivity;
+import hama.alsaygh.kw.delivery.view.base.BaseActivity;
 import hama.alsaygh.kw.delivery.databinding.ActivityLoginBinding;
 import hama.alsaygh.kw.delivery.listener.LoginListener;
 import hama.alsaygh.kw.delivery.utils.SharedPreferenceConstant;

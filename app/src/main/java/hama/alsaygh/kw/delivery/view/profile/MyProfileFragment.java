@@ -11,7 +11,7 @@ import androidx.fragment.app.FragmentManager;
 
 import hama.alsaygh.kw.delivery.R;
 import hama.alsaygh.kw.delivery.adapters.pagerAdapter.OrderPagerAdapter;
-import hama.alsaygh.kw.delivery.base.BaseFragment;
+import hama.alsaygh.kw.delivery.view.base.BaseFragment;
 import hama.alsaygh.kw.delivery.databinding.MyProfileBinding;
 import hama.alsaygh.kw.delivery.utils.SharedPreferenceConstant;
 import hama.alsaygh.kw.delivery.utils.image.CircleTransform;
