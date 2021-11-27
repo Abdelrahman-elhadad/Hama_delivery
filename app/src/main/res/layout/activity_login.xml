@@ -6,7 +6,7 @@
 
         <variable
             name="model"
-            type="com.example.hama_delivery.view.auth.LoginActivityViewModel" />
+            type="hama.alsaygh.kw.delivery.view.auth.LoginActivityViewModel" />
 
     </data>
 

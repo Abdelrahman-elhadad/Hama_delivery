@@ -6,7 +6,7 @@
 
         <variable
             name="model"
-            type="com.example.hama_delivery.view.profile.ProfileViewModel" />
+            type="hama.alsaygh.kw.delivery.view.profile.ProfileViewModel" />
 
     </data>
 

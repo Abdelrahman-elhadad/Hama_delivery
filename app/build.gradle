@@ -6,7 +6,7 @@ android {
     compileSdkVersion 30
 
     defaultConfig {
-        applicationId "com.example.hama_delivery"
+        applicationId "hama.alsaygh.kw.delivery"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1

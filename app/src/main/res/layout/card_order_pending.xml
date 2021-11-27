@@ -6,7 +6,7 @@
 
         <variable
             name="model"
-            type="com.example.hama_delivery.adapters.orderPending.OrderPendingViewModel" />
+            type="hama.alsaygh.kw.delivery.adapters.orderPending.OrderPendingViewModel" />
 
     </data>
 

@@ -6,7 +6,7 @@
 
         <variable
             name="model"
-            type="com.example.hama_delivery.view.order.OrderViewModel" />
+            type="hama.alsaygh.kw.delivery.view.order.OrderViewModel" />
 
     </data>
 

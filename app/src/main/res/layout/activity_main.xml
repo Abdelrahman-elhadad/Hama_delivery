@@ -6,7 +6,7 @@
 
         <variable
             name="model"
-            type="com.example.hama_delivery.view.splash.SplashActivityViewModel" />
+            type="hama.alsaygh.kw.delivery.view.splash.SplashActivityViewModel" />
 
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout

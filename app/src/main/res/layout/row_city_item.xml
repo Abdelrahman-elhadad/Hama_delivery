@@ -6,7 +6,7 @@
 
         <variable
             name="model"
-            type="com.example.hama_delivery.adapters.city.CityViewModel" />
+            type="hama.alsaygh.kw.delivery.adapters.city.CityViewModel" />
 
     </data>
 
