@@ -55,12 +55,7 @@ public class Vendor_info_adapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         public Holder(@NonNull View itemView) {
             super(itemView);
-            imageView =(ImageView)itemView.findViewById(R.id.ring1);
-            imageView =(ImageView)itemView.findViewById(R.id.ring2);
-            imageView =(ImageView)itemView.findViewById(R.id.ring3);
-            imageView =(ImageView)itemView.findViewById(R.id.ring4);
-            tv1=(TextView)itemView.findViewById(R.id.gold_ring11);
-            out_of_delivery=(TextView)itemView.findViewById(R.id.out_of_delivery);
+             out_of_delivery=(TextView)itemView.findViewById(R.id.out_of_delivery);
             itemView.setOnClickListener((View.OnClickListener) this);
 
 

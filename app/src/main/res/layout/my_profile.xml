@@ -133,15 +133,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
                         android:layout_marginTop="10dp"
                         android:orientation="vertical">
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="20dp"
                             android:clipToPadding="false"
                             app:cardCornerRadius="4dp"
                             app:cardElevation="0dp">
@@ -153,29 +151,26 @@
                                 app:tabBackground="@drawable/drawable_selector_tab"
                                 app:tabIndicatorColor="#00ffffff"
                                 app:tabIndicatorFullWidth="false"
-                                app:tabSelectedTextColor="@color/blackcolor1"
+                                app:tabSelectedTextColor="@color/white"
                                 app:tabTextColor="@color/color_store_page">
 
                                 <com.google.android.material.tabs.TabItem
                                     android:id="@+id/complete_tab"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:background="@drawable/back_tab"
                                     android:text="@string/Active_Orders" />
 
                                 <com.google.android.material.tabs.TabItem
                                     android:id="@+id/pending_order_tab"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:background="@drawable/back_tab"
                                     android:text="@string/Pending_Orders" />
 
-                                <com.google.android.material.tabs.TabItem
+                                <!--<com.google.android.material.tabs.TabItem
                                     android:id="@+id/Archived_Orders"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:background="@drawable/back_tab"
-                                    android:text="@string/Archived_Orders" />
+                                    android:text="@string/Archived_Orders" />-->
 
 
                             </com.google.android.material.tabs.TabLayout>

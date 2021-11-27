@@ -1,13 +1,10 @@
-package com.example.hama_delivery.adapters;
+package com.example.hama_delivery.adapters.pagerAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.hama_delivery.fragment.ActiveOrderFragment;
-import com.example.hama_delivery.fragment.PendingFragment;
-import com.example.hama_delivery.fragment.ReturnedFragment;
 import com.example.hama_delivery.fragment.UserInformationFragment;
 import com.example.hama_delivery.fragment.VendorInformationFragment;
 

@@ -12,7 +12,9 @@
         <entry key="app/src/main/res/drawable/drawable_selected_tab.xml" value="0.2222222222222222" />
         <entry key="app/src/main/res/drawable/drawable_selector_tab.xml" value="0.25462962962962965" />
         <entry key="app/src/main/res/drawable/drawable_unselector_tab.xml" value="0.2222222222222222" />
+        <entry key="app/src/main/res/drawable/home.xml" value="0.2708333333333333" />
         <entry key="app/src/main/res/drawable/ic_closee.xml" value="0.146875" />
+        <entry key="app/src/main/res/drawable/ic_user.xml" value="0.2708333333333333" />
         <entry key="app/src/main/res/drawable/shape_oval_ttee.xml" value="0.146875" />
         <entry key="app/src/main/res/drawable/shape_round_white.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/active_order.xml" value="0.25" />
@@ -20,12 +22,19 @@
         <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.31335830212234705" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.13072916666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2546875" />
-        <entry key="app/src/main/res/layout/card_active_order.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/card_active_order.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/card_jawaher_store.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/card_order_pending.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/card_order_returned.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/card_pending_fragment.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/card_returned_order.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/dialog_gps_setting.xml" value="0.165" />
         <entry key="app/src/main/res/layout/dialog_login.xml" value="0.13072916666666667" />
         <entry key="app/src/main/res/layout/edit_profile.xml" value="0.13072916666666667" />
         <entry key="app/src/main/res/layout/home.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/login.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/my_order.xml" value="0.2546875" />
+        <entry key="app/src/main/res/layout/my_order_fragment.xml" value="0.375" />
         <entry key="app/src/main/res/layout/my_profile.xml" value="0.375" />
         <entry key="app/src/main/res/layout/order_tracking.xml" value="0.18194444444444444" />
         <entry key="app/src/main/res/layout/order_tracking_map_view.xml" value="0.13072916666666667" />

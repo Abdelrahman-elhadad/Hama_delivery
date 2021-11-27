@@ -19,7 +19,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.hama_delivery.base.BaseFragment;
 import com.example.hama_delivery.R;
-import com.example.hama_delivery.adapters.OrderTrackingPagerAdapter;
+import com.example.hama_delivery.adapters.pagerAdapter.OrderTrackingPagerAdapter;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 

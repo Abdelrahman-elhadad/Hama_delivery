@@ -32,8 +32,6 @@ public class CityAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        RecyclerView.ViewHolder viewHolder;
-
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         RowCityItemBinding binding = DataBindingUtil.inflate(layoutInflater, R.layout.row_city_item, parent, false);
         return new ViewItemHolder(binding);

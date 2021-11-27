@@ -11,7 +11,7 @@
         android:layout_margin="10dp"
         android:id="@+id/returned_rv"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/card_returned_order"
+        tools:listitem="@layout/card_order_returned"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.hama_delivery.base.BaseActivity;
 import com.example.hama_delivery.fragment.OrderTracking;
+import com.example.hama_delivery.view.order.MyOrderFragment;
 import com.example.hama_delivery.view.profile.MyProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -61,7 +62,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
     @Override
     public void onBackPressed() {
         if (position != Home)
-            commitFragment(new MyOrder(), Home);
+            commitFragment(new MyOrderFragment(), Home);
         else
             super.onBackPressed();
     }
@@ -69,7 +70,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         if (menuItem.getItemId() == R.id.it_home) {
-            commitFragment(new MyOrder(), Home);
+            commitFragment(new MyOrderFragment(), Home);
             Log.e(TAG, "home1" + menuItem.getItemId());
 
             return true;

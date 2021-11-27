@@ -2,6 +2,7 @@ package com.example.hama_delivery.model.order;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -46,6 +47,8 @@ public class OrdersResponse {
     }
 
     public List<Order> getData() {
+        if(data==null)
+            data=new ArrayList<>();
         return data;
     }
 
