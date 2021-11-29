@@ -33,7 +33,7 @@
     <color name="color_light_mask">#3598BDAB</color>
 
     <color name="color_buttom_navigation2">#D3D3D3</color>
-
+<color name="green">#00C569</color>
     <color name="filter_by">#223263</color>
     <color name="filter_b1y">#D0D7e6</color>
     <color name="filter_b11y">#F9F6ED</color>

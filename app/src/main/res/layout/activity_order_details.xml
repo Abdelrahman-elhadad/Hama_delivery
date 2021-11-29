@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="hama.alsaygh.kw.delivery.view.order.OrderViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/transparent_color">
+
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="25dp"
+                android:layout_height="23dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="20dp"
+                app:srcCompat="@drawable/back" />
+
+            <TextView
+                android:id="@+id/txt_order_tracking_toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/cairobold"
+                android:text="@string/Order_Tracking"
+                android:textColor="@color/blackcolor1"
+                android:textSize="25dp" />
+
+
+            <ImageView
+                android:id="@+id/notif"
+                android:layout_width="25dp"
+                android:layout_height="23dp"
+                android:layout_gravity="right"
+                android:layout_marginLeft="20dp"
+                android:layout_marginEnd="10dp"
+                app:srcCompat="@drawable/ic_notification" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:clipToPadding="false"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_order_tracking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabBackground="@drawable/drawable_selector_tab"
+                app:tabIndicatorColor="#00ffffff"
+                app:tabIndicatorFullWidth="false"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextColor="@color/color_store_page">
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/vendor_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Vendors_Information" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/user_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/User_Information" />
+
+
+            </com.google.android.material.tabs.TabLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager_order_tracking"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1" />
+
+
+
+    </LinearLayout>
+
+</layout>

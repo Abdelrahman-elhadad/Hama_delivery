@@ -1,5 +1,6 @@
 package hama.alsaygh.kw.delivery.view.order;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import hama.alsaygh.kw.delivery.model.store.Store;
 import hama.alsaygh.kw.delivery.view.home.HomeActivity;
 import hama.alsaygh.kw.delivery.listener.OrderListener;
 import hama.alsaygh.kw.delivery.R;
@@ -19,6 +21,8 @@ import hama.alsaygh.kw.delivery.databinding.OrdersFragmentBinding;
 import hama.alsaygh.kw.delivery.dialog.LoginDialog;
 import hama.alsaygh.kw.delivery.model.order.Order;
 import hama.alsaygh.kw.delivery.utils.AppConstants;
+import hama.alsaygh.kw.delivery.view.order.orderDetails.OrderDetailsActivity;
+
 import com.faltenreich.skeletonlayout.Skeleton;
 import com.faltenreich.skeletonlayout.SkeletonLayoutUtils;
 import com.google.android.material.snackbar.Snackbar;
@@ -103,7 +107,22 @@ public class OrdersFragment extends BaseFragment implements OrderListener {
 
     @Override
     public void onOrderClick(Order order, int position) {
-        if (getActivity() != null)
-            ((HomeActivity) getActivity()).openOrderTrack();
+        Intent intent=new Intent(requireContext(), OrderDetailsActivity.class);
+        intent.putExtra(AppConstants.ORDER_ID,order.getId());
+        intent.putExtra(AppConstants.ORDER_STATUS,status);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onOrderQrReceivedClick(Store store, int position) {
+
+    }
+
+    @Override
+    public void refresh() {
+        binding.rvOrders.setVisibility(View.VISIBLE);
+        binding.llNoOrder.setVisibility(View.GONE);
+        skeleton.showSkeleton();
+        model.getOrders(status);
     }
 }

@@ -9,15 +9,16 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import hama.alsaygh.kw.delivery.listener.OrderListener;
-import hama.alsaygh.kw.delivery.R;
-import hama.alsaygh.kw.delivery.databinding.CardOrderPendingBinding;
-import hama.alsaygh.kw.delivery.dialog.LoginDialog;
-import hama.alsaygh.kw.delivery.model.order.Order;
 import com.google.android.material.snackbar.Snackbar;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import hama.alsaygh.kw.delivery.R;
+import hama.alsaygh.kw.delivery.databinding.CardOrderPendingBinding;
+import hama.alsaygh.kw.delivery.dialog.LoginDialog;
+import hama.alsaygh.kw.delivery.listener.OrderListener;
+import hama.alsaygh.kw.delivery.model.order.Order;
 
 public class PendingOrderAdapter extends RecyclerView.Adapter<PendingOrderAdapter.Holder> {
 
@@ -149,27 +150,25 @@ public class PendingOrderAdapter extends RecyclerView.Adapter<PendingOrderAdapte
 
         }
 
-        holder.binding.tvAcceptOrder.setOnClickListener(v->{
+        holder.binding.tvAcceptOrder.setOnClickListener(v -> {
             holder.binding.tvAcceptOrder.setVisibility(View.GONE);
             holder.binding.pbAcceptOrder.setVisibility(View.VISIBLE);
             model.acceptOrder();
         });
 
-        model.getAcceptOrderObserver().observe(activity,checkResponse -> {
+        model.getAcceptOrderObserver().observe(activity, checkResponse -> {
             holder.binding.tvAcceptOrder.setVisibility(View.VISIBLE);
             holder.binding.pbAcceptOrder.setVisibility(View.GONE);
-            if(checkResponse.isStatus())
-            {
+            if (checkResponse.isStatus()) {
                 Snackbar.make(holder.binding.tvAcceptOrder, checkResponse.getMessage(), Snackbar.LENGTH_SHORT).show();
-
-            }else
-            {
+                if (listener != null)
+                    listener.refresh();
+            } else {
                 if (checkResponse.getCode().equalsIgnoreCase("401")) {
                     LoginDialog loginDialog = LoginDialog.newInstance();
                     loginDialog.show(activity.getSupportFragmentManager(), "login");
                 } else
                     Snackbar.make(holder.binding.tvAcceptOrder, checkResponse.getMessage(), Snackbar.LENGTH_SHORT).show();
-
             }
         });
 

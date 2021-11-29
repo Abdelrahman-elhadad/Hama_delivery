@@ -17,6 +17,7 @@ public class OrderActiveViewModel extends ViewModel {
     Context context;
     Order storeModel;
 
+
     public OrderActiveViewModel(Context context, Order storeModel) {
         this.context = context;
         this.storeModel = storeModel;

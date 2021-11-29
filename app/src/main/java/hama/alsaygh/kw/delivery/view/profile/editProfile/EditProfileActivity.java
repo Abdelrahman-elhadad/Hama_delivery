@@ -86,7 +86,6 @@ public class EditProfileActivity extends BaseActivity implements OnCityListener 
                 } else {
                     binding.etConfirmPassword.setBackgroundResource(R.drawable.back_edit_txt);
                 }
-
             }
 
         });
@@ -131,7 +130,6 @@ public class EditProfileActivity extends BaseActivity implements OnCityListener 
             datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             datePickerDialog.show();
         });
-
 
         binding.rlProfile.setOnClickListener(new View.OnClickListener() {
             @Override

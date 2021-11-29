@@ -12,7 +12,6 @@ import androidx.fragment.app.FragmentTransaction;
 import hama.alsaygh.kw.delivery.R;
 import hama.alsaygh.kw.delivery.view.base.BaseActivity;
 import hama.alsaygh.kw.delivery.databinding.ActivityHomeBinding;
-import hama.alsaygh.kw.delivery.fragment.OrderTracking;
 import hama.alsaygh.kw.delivery.view.order.MyOrderFragment;
 import hama.alsaygh.kw.delivery.view.profile.MyProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -24,7 +23,6 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
 
     public final int Home = 0;
     public final int MyProfile = 1;
-    public final int OrderTrack = 2;
 
     public static int position;
    ActivityHomeBinding binding;
@@ -52,9 +50,6 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
         fragmentTransaction.commit();
     }
 
-    public void openOrderTrack() {
-        commitFragment(new OrderTracking(), OrderTrack);
-    }
 
     @Override
     public void onBackPressed() {

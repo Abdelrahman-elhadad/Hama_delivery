@@ -3,6 +3,7 @@
     <string name="our">Our Delivery System!</string>
     <string name="Language_Settings4">Sign in to continue</string>
     <string name="email">Delivery Man Serial No</string>
+    <string name="Email">Email Address</string>
     <string name="pass">Password</string>
     <string name="Language_Settings5">Forget?</string>Order Tracking
     <string name="login">Login</string>
@@ -22,7 +23,7 @@
     <string name="User_Information">User Information</string>
     <string name="TOTAL">TOTAL</string>
     <string name="Jawaher_Store">Jawaher Store</string>
-    <string name="Products">2 Products</string>
+    <string name="Products">xx Products</string>
     <string name="Golden">Golden ring, Silver ring, Ring ...</string>
     <string name="Rejected">Rejected by Vendor</string>
     <string name="Date">Date</string>
@@ -77,5 +78,6 @@
     <string name="new_password">New Password</string>
     <string name="confirm_new_password">Confirm New Password</string>
     <string name="no_orders">No orders</string>
+    <string name="user_name">User Name</string>
 
 </resources>
