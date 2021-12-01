@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModel;
 import hama.alsaygh.kw.delivery.model.order.OrderResponse;
 import hama.alsaygh.kw.delivery.model.order.OrdersResponse;
 import hama.alsaygh.kw.delivery.repo.OrderRepo;
+import hama.alsaygh.kw.delivery.utils.AppConstants;
 import hama.alsaygh.kw.delivery.view.notification.NotificationsActivity;
 
 public class OrderViewModel extends ViewModel {
@@ -18,13 +19,14 @@ public class OrderViewModel extends ViewModel {
 
     private MutableLiveData<OrdersResponse> ordersResponseMutableLiveData;
     private MutableLiveData<OrderResponse> orderResponseMutableLiveData;
-
+    String status;
     private OrderRepo orderRepo;
     Context context;
 
-    public OrderViewModel(Context context) {
+    public OrderViewModel(Context context, String status) {
         this.context = context;
         orderRepo=new OrderRepo();
+        this.status = status;
 
     }
 
@@ -56,5 +58,9 @@ public class OrderViewModel extends ViewModel {
     {
 
         view.getContext().startActivity(new Intent(view.getContext(), NotificationsActivity.class));
+    }
+    public int getScanVisibility()
+    {
+        return status.equalsIgnoreCase(AppConstants.ACTIVE)? View.VISIBLE:View.GONE;
     }
 }

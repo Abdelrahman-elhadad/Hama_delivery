@@ -61,7 +61,7 @@ public class OrdersFragment extends BaseFragment implements OrderListener {
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        model = new OrderViewModel(requireContext());
+        model = new OrderViewModel(requireContext(),status);
         binding.setModel(model);
 
         binding.rvOrders.setLayoutManager(new LinearLayoutManager(requireContext()));

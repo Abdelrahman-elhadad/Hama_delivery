@@ -157,6 +157,7 @@
                         android:gravity="center"
                         android:orientation="horizontal"
                         android:padding="5dp"
+                        android:visibility="gone"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView892">
@@ -181,6 +182,12 @@
                             android:textSize="12dp" />
                     </LinearLayout>
 
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_view_map"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -233,68 +240,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
-            android:id="@+id/cl_scan_bottom"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@color/white"
-            android:elevation="2dp"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:visibility="@{model.scanVisibility}">
 
-            <LinearLayout
-                android:id="@+id/ll_scan_to_delivered"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/back_btn"
-                android:gravity="center"
-                android:visibility="visible"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_qrcode" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:fontFamily="@font/cairobold"
-                    android:text="@string/sscan"
-                    android:textColor="@color/white"
-                    android:textSize="20sp" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/ll_scan_to_receive"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/back_btn"
-                android:gravity="center"
-                android:visibility="gone"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_qrcode" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:fontFamily="@font/cairobold"
-                    android:text="@string/Scan"
-                    android:textColor="@color/white"
-                    android:textSize="20sp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
 
     </LinearLayout>
 </layout>

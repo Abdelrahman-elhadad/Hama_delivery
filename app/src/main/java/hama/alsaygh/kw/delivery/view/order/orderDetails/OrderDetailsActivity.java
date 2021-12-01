@@ -30,11 +30,14 @@ public class OrderDetailsActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityOrderDetailsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        model = new OrderViewModel(this);
-        binding.setModel(model);
-        if (getIntent() != null)
+
+        if (getIntent() != null) {
             order_id = getIntent().getIntExtra(AppConstants.ORDER_ID, -1);
-        status = getIntent().getStringExtra(AppConstants.ORDER_STATUS);
+            status = getIntent().getStringExtra(AppConstants.ORDER_STATUS);
+        }
+
+        model = new OrderViewModel(this,status);
+        binding.setModel(model);
 
         binding.imgBack.setOnClickListener(view->{
             onBackPressed();

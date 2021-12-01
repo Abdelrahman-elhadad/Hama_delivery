@@ -128,15 +128,20 @@
 
                 <TextView
                     android:id="@+id/textView1874"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@{model.address}"
+                    app:layout_constraintStart_toEndOf="@+id/textView12"
+                    app:layout_constraintHorizontal_bias="1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/textView11"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:fontFamily="@font/cairoregular"
                     android:textSize="12sp"
+                    android:gravity="end"
+                    android:textAlignment="viewEnd"
                     android:textColor="@color/black" />
 
                 <View
@@ -321,7 +326,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/white"
-                        android:layout_weight="1"
                         android:layout_marginEnd="10dp"
                         android:layout_marginStart="10dp"
                         android:fontFamily="@font/cairobold"
@@ -330,6 +334,12 @@
                 </LinearLayout>
 
 
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_view_map"/>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

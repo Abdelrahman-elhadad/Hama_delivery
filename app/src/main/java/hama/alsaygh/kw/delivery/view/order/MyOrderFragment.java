@@ -33,7 +33,7 @@ public class MyOrderFragment extends BaseFragment {
     @Override
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        model = new OrderViewModel(requireContext());
+        model = new OrderViewModel(requireContext(),"");
         binding.setModel(model);
         fragmentManager = getChildFragmentManager();
         OrderPagerAdapter orderPagerAdapter = new OrderPagerAdapter(fragmentManager, binding.tabMyOrder.getTabCount(),requireContext());

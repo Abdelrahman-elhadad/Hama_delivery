@@ -95,7 +95,43 @@
             android:layout_margin="10dp"
             android:layout_weight="1" />
 
+        <LinearLayout
+            android:id="@+id/cl_scan_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="@{model.scanVisibility}">
 
+            <LinearLayout
+                android:id="@+id/ll_scan_to_delivered"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/back_btn"
+                android:gravity="center"
+                android:visibility="visible"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_qrcode" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/cairobold"
+                    android:text="@string/sscan"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 

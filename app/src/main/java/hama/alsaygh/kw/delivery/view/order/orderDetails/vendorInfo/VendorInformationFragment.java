@@ -73,7 +73,7 @@ public class VendorInformationFragment extends BaseFragment implements OrderList
 
         model.getQrObserver().observe(requireActivity(), checkResponse -> {
             if (checkResponse.isStatus()) {
-                Snackbar.make(binding.llScanToReceive, checkResponse.getMessage(), Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(binding.getRoot(), checkResponse.getMessage(), Snackbar.LENGTH_SHORT).show();
                 Intent intent = new Intent(requireContext(), QRScannerActivity.class);
                 intent.putExtra(AppConstants.ORDER_ID, order.getId());
                 intent.putExtra(AppConstants.VENDOR_ID, vendor_id);
@@ -83,19 +83,11 @@ public class VendorInformationFragment extends BaseFragment implements OrderList
                     LoginDialog loginDialog = LoginDialog.newInstance();
                     loginDialog.show(getChildFragmentManager(), "login");
                 } else
-                    Snackbar.make(binding.llScanToReceive, checkResponse.getMessage(), Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(binding.getRoot(), checkResponse.getMessage(), Snackbar.LENGTH_SHORT).show();
             }
         });
 
-        binding.llScanToReceive.setOnClickListener(v -> {
-            VendorsDialog vendorsDialog = VendorsDialog.newInstance(order.getVendor_info(), VendorInformationFragment.this);
-            vendorsDialog.show(getChildFragmentManager(), "vendors");
-        });
 
-        binding.llScanToDelivered.setOnClickListener(v -> {
-
-
-        });
     }
 
     @Override
