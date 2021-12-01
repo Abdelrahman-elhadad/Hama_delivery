@@ -1,4 +1,4 @@
-package hama.alsaygh.kw.delivery.view.QR;
+package hama.alsaygh.kw.delivery.view.qr;
 
 import android.content.Context;
 
@@ -6,8 +6,6 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import hama.alsaygh.kw.delivery.model.check.CheckResponse;
-import hama.alsaygh.kw.delivery.model.order.OrderResponse;
-import hama.alsaygh.kw.delivery.model.order.OrdersResponse;
 import hama.alsaygh.kw.delivery.repo.OrderRepo;
 
 public class QrViewModel extends ViewModel {

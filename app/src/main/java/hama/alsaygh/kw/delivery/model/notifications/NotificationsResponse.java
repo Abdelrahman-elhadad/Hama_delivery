@@ -20,6 +20,10 @@ public class NotificationsResponse {
     @SerializedName("data")
     private List<Notifications> data;
 
+    @SerializedName("pagination")
+    private Pagination pagination;
+
+
     public boolean isStatus() {
         return status;
     }
@@ -52,5 +56,13 @@ public class NotificationsResponse {
 
     public void setData(List<Notifications> data) {
         this.data = data;
+    }
+
+    public Pagination getPagination() {
+        return pagination;
+    }
+
+    public void setPagination(Pagination pagination) {
+        this.pagination = pagination;
     }
 }

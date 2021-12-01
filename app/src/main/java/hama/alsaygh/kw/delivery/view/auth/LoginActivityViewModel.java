@@ -4,40 +4,42 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 
 import androidx.databinding.ObservableInt;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import hama.alsaygh.kw.delivery.view.home.HomeActivity;
+import com.google.firebase.messaging.FirebaseMessaging;
+
 import hama.alsaygh.kw.delivery.listener.LoginListener;
 import hama.alsaygh.kw.delivery.model.user.LoginResponse;
 import hama.alsaygh.kw.delivery.repo.AuthRepo;
+import hama.alsaygh.kw.delivery.view.home.HomeActivity;
 
 public class LoginActivityViewModel extends ViewModel {
 
-    private final String TAG = "SplashActivityViewModel";
+    private final String TAG = "LoginActivityViewModel";
 
     private final AuthRepo authRepo;
     private String userName, password;
 
     private final ObservableInt loginVisibility = new ObservableInt();
-    private  final ObservableInt pbLoginVisibility = new ObservableInt();
+    private final ObservableInt pbLoginVisibility = new ObservableInt();
     private final LoginListener listener;
-    private  MutableLiveData<LoginResponse> loginResponseMutableLiveData;
+    private MutableLiveData<LoginResponse> loginResponseMutableLiveData;
 
     public LoginActivityViewModel(LoginListener listener) {
         this.listener = listener;
-        authRepo=new AuthRepo();
+        authRepo = new AuthRepo();
         loginVisibility.set(View.VISIBLE);
         pbLoginVisibility.set(View.GONE);
     }
 
-    public MutableLiveData<LoginResponse> getLoginObservable()
-    {
-        if(loginResponseMutableLiveData==null)
-            loginResponseMutableLiveData=new MutableLiveData<>();
+    public MutableLiveData<LoginResponse> getLoginObservable() {
+        if (loginResponseMutableLiveData == null)
+            loginResponseMutableLiveData = new MutableLiveData<>();
 
         return loginResponseMutableLiveData;
     }
@@ -58,9 +60,21 @@ public class LoginActivityViewModel extends ViewModel {
         this.pbLoginVisibility.set(loginVisibility);
     }
 
-    public void login(Context context)
-    {
-        authRepo.Login(context,userName,password,loginResponseMutableLiveData);
+    public void login(Context context) {
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                        return;
+                    }
+
+                    // Get new FCM registration token
+                    String token = task.getResult();
+
+                    Log.d(TAG, token);
+                    authRepo.Login(context, userName, password, token, loginResponseMutableLiveData);
+                });
+
     }
 
     public void onLoginClick(View view) {

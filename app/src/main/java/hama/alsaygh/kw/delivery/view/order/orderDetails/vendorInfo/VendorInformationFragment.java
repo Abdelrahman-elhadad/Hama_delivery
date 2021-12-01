@@ -21,7 +21,7 @@ import hama.alsaygh.kw.delivery.listener.OrderListener;
 import hama.alsaygh.kw.delivery.model.order.Order;
 import hama.alsaygh.kw.delivery.model.store.Store;
 import hama.alsaygh.kw.delivery.utils.AppConstants;
-import hama.alsaygh.kw.delivery.view.QR.QRScannerActivity;
+import hama.alsaygh.kw.delivery.view.qr.QRScannerActivity;
 import hama.alsaygh.kw.delivery.view.base.BaseFragment;
 
 public class VendorInformationFragment extends BaseFragment implements OrderListener {
@@ -107,5 +107,10 @@ public class VendorInformationFragment extends BaseFragment implements OrderList
     public void onOrderQrReceivedClick(Store store, int position) {
         vendor_id = store.getId();
         model.getQr(order.getId(), vendor_id);
+    }
+
+    @Override
+    public void refresh() {
+
     }
 }

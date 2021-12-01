@@ -6,7 +6,7 @@
 
         <variable
             name="model"
-            type="hama.alsaygh.kw.delivery.view.QR.QrViewModel" />
+            type="hama.alsaygh.kw.delivery.view.qr.QrViewModel" />
 
     </data>
     <LinearLayout

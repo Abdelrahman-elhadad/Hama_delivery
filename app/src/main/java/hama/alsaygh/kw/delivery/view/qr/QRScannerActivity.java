@@ -1,4 +1,4 @@
-package hama.alsaygh.kw.delivery.view.QR;
+package hama.alsaygh.kw.delivery.view.qr;
 
 import android.graphics.Color;
 import android.os.Bundle;

@@ -147,7 +147,6 @@ public class PendingOrderAdapter extends RecyclerView.Adapter<PendingOrderAdapte
                 Picasso.get().load(avatar4).error(R.drawable.image_not_found).resize(150, 150).into(holder.binding.ivItem3);
             } else
                 Picasso.get().load(R.drawable.image_not_found).into(holder.binding.ivItem3);
-
         }
 
         holder.binding.tvAcceptOrder.setOnClickListener(v -> {

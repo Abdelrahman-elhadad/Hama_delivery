@@ -1,6 +1,8 @@
 package hama.alsaygh.kw.delivery.view.order;
 
 import android.content.Context;
+import android.content.Intent;
+import android.view.View;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -8,6 +10,7 @@ import androidx.lifecycle.ViewModel;
 import hama.alsaygh.kw.delivery.model.order.OrderResponse;
 import hama.alsaygh.kw.delivery.model.order.OrdersResponse;
 import hama.alsaygh.kw.delivery.repo.OrderRepo;
+import hama.alsaygh.kw.delivery.view.notification.NotificationsActivity;
 
 public class OrderViewModel extends ViewModel {
 
@@ -47,5 +50,11 @@ public class OrderViewModel extends ViewModel {
     public void getOrder(int id,String status)
     {
         orderRepo.getOrder(context,id,status,orderResponseMutableLiveData);
+    }
+
+    public void onNotificationClick(View view)
+    {
+
+        view.getContext().startActivity(new Intent(view.getContext(), NotificationsActivity.class));
     }
 }

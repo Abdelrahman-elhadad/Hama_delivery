@@ -116,6 +116,10 @@ public class RequestWrapper {
         return FULL_PATH_USER;
     }
 
+    public String getFullPathConstants() {
+        return FULL_PATH_CONSTANTS;
+    }
+
     public Request.Builder getRequestHeader(Context context)
     {
         return  new Request.Builder()
@@ -153,6 +157,21 @@ public class RequestWrapper {
                 .addHeader("Accept-Language", LocalUtils.getInstance().getLanguageShort(context) )
                 .addHeader("UUID", Utils.getInstance().getUUID(context))
                 .addHeader("Authorization", "Bearer " + token);
+
+    }
+
+    public Request.Builder getRequestHeaderPush(Context context,String token)
+    {
+        return  new Request.Builder()
+                .addHeader("Accept", RequestWrapper.getInstance().getContentType())
+                .addHeader("Content-Type", RequestWrapper.getInstance().getContentType())
+                .addHeader("app-version", RequestWrapper.getInstance().getAppVersion(context))
+                .addHeader("os-version", RequestWrapper.getInstance().getDeviceType())
+                .addHeader("mobile-version", Build.VERSION.RELEASE)
+                .addHeader("Accept-Language", LocalUtils.getInstance().getLanguageShort(context) )
+                .addHeader("UUID", Utils.getInstance().getUUID(context))
+                .addHeader("Authorization", "Bearer " + SharedPreferenceConstant.getSharedPreferenceUserToken(context))
+                .addHeader("fcm_token", token);
 
     }
     public String requestBodyToString(final Request request) {

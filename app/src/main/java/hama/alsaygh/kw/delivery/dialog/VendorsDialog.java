@@ -99,4 +99,9 @@ public class VendorsDialog extends BottomSheetDialogFragment implements OrderLis
             mListener.onOrderQrReceivedClick(store,position);
         dismiss();
     }
+
+    @Override
+    public void refresh() {
+
+    }
 }

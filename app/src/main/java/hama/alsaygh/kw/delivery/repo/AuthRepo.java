@@ -20,7 +20,7 @@ public class AuthRepo {
     private final String TAG = "RequestWrapper";
 
     ///////////////////// login ///////////////////////////////
-    public void Login(final Context context, final String serial_number, final String password,  final MutableLiveData<LoginResponse> loginResponseMutableLiveData) {
+    public void Login(final Context context, final String serial_number, final String password,final String token,  final MutableLiveData<LoginResponse> loginResponseMutableLiveData) {
 
         new Thread(() -> {
             LoginResponse loginSocialResponse;
@@ -30,9 +30,10 @@ public class AuthRepo {
                 FormBody body = new FormBody.Builder()
                         .add("password", password)
                         .add("serial_number", serial_number)
+                        .add("fcm_token", token)
                         .build();
 
-                Request.Builder requestBuilder = RequestWrapper.getInstance().getRequestHeader(context);
+                Request.Builder requestBuilder = RequestWrapper.getInstance().getRequestHeaderPush(context,token);
                 Request request = requestBuilder.url(url).post(body).build();
 
                 Log.i(TAG, "Request: " + request + "\n " + RequestWrapper.getInstance().requestBodyToString(request));
