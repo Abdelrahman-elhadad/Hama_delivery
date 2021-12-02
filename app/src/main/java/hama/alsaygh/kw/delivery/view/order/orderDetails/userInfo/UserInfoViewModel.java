@@ -1,6 +1,7 @@
 package hama.alsaygh.kw.delivery.view.order.orderDetails.userInfo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 
 import androidx.lifecycle.ViewModel;
@@ -8,6 +9,7 @@ import androidx.lifecycle.ViewModel;
 import hama.alsaygh.kw.delivery.R;
 import hama.alsaygh.kw.delivery.model.order.Order;
 import hama.alsaygh.kw.delivery.utils.AppConstants;
+import hama.alsaygh.kw.delivery.view.map.MapActivity;
 
 public class UserInfoViewModel extends ViewModel {
 
@@ -51,6 +53,13 @@ public class UserInfoViewModel extends ViewModel {
 
     public String getTotalPrice() {
         return order.getTotal() + " " + order.getCurrency();
+    }
+
+    public void onAddressClick(View view)
+    {
+        Intent intent=new Intent(view.getContext(), MapActivity.class);
+        intent.putExtra(AppConstants.ADDRESS,order.getDelivery().toString());
+        view.getContext().startActivity(intent);
     }
 
 }

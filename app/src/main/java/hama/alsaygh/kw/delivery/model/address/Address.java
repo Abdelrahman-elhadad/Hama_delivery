@@ -86,5 +86,9 @@ public class Address implements Serializable {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return getBuilding_no()+","+getStreet()+","+getCountry().getName();
+    }
 }
 

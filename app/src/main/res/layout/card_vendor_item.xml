@@ -214,6 +214,7 @@
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="5dp"
+            android:onClick="@{model::onAddressClick}"
             android:layout_marginStart="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/view_center"

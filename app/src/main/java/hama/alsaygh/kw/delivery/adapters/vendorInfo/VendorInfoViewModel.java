@@ -2,6 +2,8 @@ package hama.alsaygh.kw.delivery.adapters.vendorInfo;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.view.View;
 
 import androidx.lifecycle.ViewModel;
 
@@ -10,6 +12,8 @@ import hama.alsaygh.kw.delivery.model.cart.CartItem;
 import hama.alsaygh.kw.delivery.model.order.Order;
 import hama.alsaygh.kw.delivery.model.product.Product;
 import hama.alsaygh.kw.delivery.model.store.Store;
+import hama.alsaygh.kw.delivery.utils.AppConstants;
+import hama.alsaygh.kw.delivery.view.map.MapActivity;
 
 
 public class VendorInfoViewModel extends ViewModel {
@@ -49,5 +53,11 @@ public class VendorInfoViewModel extends ViewModel {
     public String getAddress()
     {
         return storeModel.getAddress();
+    }
+    public void onAddressClick(View view)
+    {
+        Intent intent=new Intent(view.getContext(), MapActivity.class);
+        intent.putExtra(AppConstants.ADDRESS,storeModel.getAddress());
+        view.getContext().startActivity(intent);
     }
 }
