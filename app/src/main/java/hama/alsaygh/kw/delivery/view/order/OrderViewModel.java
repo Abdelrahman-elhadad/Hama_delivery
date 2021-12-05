@@ -7,8 +7,10 @@ import android.view.View;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import hama.alsaygh.kw.delivery.model.check.CheckResponse;
 import hama.alsaygh.kw.delivery.model.order.OrderResponse;
 import hama.alsaygh.kw.delivery.model.order.OrdersResponse;
+import hama.alsaygh.kw.delivery.model.qr.QRDeliveryResponse;
 import hama.alsaygh.kw.delivery.repo.OrderRepo;
 import hama.alsaygh.kw.delivery.utils.AppConstants;
 import hama.alsaygh.kw.delivery.view.notification.NotificationsActivity;
@@ -19,6 +21,8 @@ public class OrderViewModel extends ViewModel {
 
     private MutableLiveData<OrdersResponse> ordersResponseMutableLiveData;
     private MutableLiveData<OrderResponse> orderResponseMutableLiveData;
+    private MutableLiveData<QRDeliveryResponse> confirmDeliveredResponseMutableLiveData;
+
     String status;
     private OrderRepo orderRepo;
     Context context;
@@ -30,6 +34,12 @@ public class OrderViewModel extends ViewModel {
 
     }
 
+    public MutableLiveData<QRDeliveryResponse> getConfirmDeliveredObservable() {
+        if (confirmDeliveredResponseMutableLiveData == null)
+            confirmDeliveredResponseMutableLiveData = new MutableLiveData<>();
+
+        return confirmDeliveredResponseMutableLiveData;
+    }
     public MutableLiveData<OrdersResponse> getOrdersObservable() {
         if (ordersResponseMutableLiveData == null)
             ordersResponseMutableLiveData = new MutableLiveData<>();
@@ -63,4 +73,11 @@ public class OrderViewModel extends ViewModel {
     {
         return status.equalsIgnoreCase(AppConstants.ACTIVE)? View.VISIBLE:View.GONE;
     }
+
+    public void postConfirmDelivered(int id)
+    {
+        orderRepo.postConfirmDelivered(context,id,confirmDeliveredResponseMutableLiveData);
+    }
+
+
 }

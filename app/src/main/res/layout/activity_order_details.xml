@@ -101,8 +101,8 @@
             android:layout_height="100dp"
             android:background="@color/white"
             android:elevation="2dp"
-            android:orientation="vertical"
             android:gravity="center"
+            android:orientation="vertical"
             android:visibility="@{model.scanVisibility}">
 
             <LinearLayout
@@ -112,8 +112,8 @@
                 android:layout_gravity="center"
                 android:background="@drawable/back_btn"
                 android:gravity="center"
-                android:visibility="visible"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="visible">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -131,6 +131,20 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/pb_scan_to_delivered"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/back_btn"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>

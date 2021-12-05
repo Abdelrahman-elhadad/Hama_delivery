@@ -12,7 +12,6 @@ public class QrViewModel extends ViewModel {
 
     private final String TAG = "OrderViewModel";
 
-    private MutableLiveData<CheckResponse> confirmDeliveredResponseMutableLiveData;
     private MutableLiveData<CheckResponse> confirmReceiveResponseMutableLiveData;
 
     private OrderRepo orderRepo;
@@ -24,12 +23,7 @@ public class QrViewModel extends ViewModel {
 
     }
 
-    public MutableLiveData<CheckResponse> getConfirmDeliveredObservable() {
-        if (confirmDeliveredResponseMutableLiveData == null)
-            confirmDeliveredResponseMutableLiveData = new MutableLiveData<>();
 
-        return confirmDeliveredResponseMutableLiveData;
-    }
 
     public MutableLiveData<CheckResponse> getConfirmOrderReceiveObservable() {
         if (confirmReceiveResponseMutableLiveData == null)
@@ -44,8 +38,5 @@ public class QrViewModel extends ViewModel {
         orderRepo.postConfirmReceived(context,id,vendor_id,qr,confirmReceiveResponseMutableLiveData);
     }
 
-    public void postConfirmDelivered(int id,String qr)
-    {
-        orderRepo.postConfirmDelivered(context,id,qr,confirmReceiveResponseMutableLiveData);
-    }
+
 }

@@ -21,6 +21,9 @@
         android:theme="@style/Theme.Hama_delivery"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".view.qr.QRDeliveryActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.map.MapActivity"
             android:exported="false" />
         <activity

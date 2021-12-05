@@ -27,6 +27,7 @@
         <entry key="app/src/main/res/layout/activity_map.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/activity_notifications.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/activity_order_details.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_qr_delivery.xml" value="0.12760416666666666" />
         <entry key="app/src/main/res/layout/activity_qrscanner.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/card_active_order.xml" value="0.5" />
         <entry key="app/src/main/res/layout/card_jawaher_store.xml" value="0.25" />

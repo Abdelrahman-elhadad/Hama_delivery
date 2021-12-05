@@ -41,17 +41,14 @@ public class QRScannerActivity extends AppCompatActivity {
             vendor_id = getIntent().getIntExtra(AppConstants.VENDOR_ID, -1);
         }
 
-        if(vendor_id!=-1)
-        {
+        if (vendor_id != -1) {
             binding.tvScan.setText(getString(R.string.sscan));
         }
 
         CodeScanner mCodeScanner = new CodeScanner(this, binding.scannerView);
         mCodeScanner.setDecodeCallback(result -> runOnUiThread(() -> {
-            if (vendor_id == -1)
-                qrViewModel.postConfirmDelivered(order_id, result.getText());
-            else
-                qrViewModel.postConfirmReceived(order_id, vendor_id, result.getText());
+
+            qrViewModel.postConfirmReceived(order_id, vendor_id, result.getText());
         }));
 
         mCodeScanner.startPreview();
@@ -68,18 +65,7 @@ public class QRScannerActivity extends AppCompatActivity {
 
             }
         });
-        qrViewModel.getConfirmDeliveredObservable().observe(this, checkResponse -> {
-            if (checkResponse.isStatus()) {
-                Snackbar.make(binding.llScanToReceive, checkResponse.getMessage(), Snackbar.LENGTH_SHORT).show();
-            } else {
-                if (checkResponse.getCode().equalsIgnoreCase("401")) {
-                    LoginDialog loginDialog = LoginDialog.newInstance();
-                    loginDialog.show(getSupportFragmentManager(), "login");
-                } else
-                    Snackbar.make(binding.llScanToReceive, checkResponse.getMessage(), Snackbar.LENGTH_SHORT).show();
 
-            }
-        });
     }
 
     private void setStatusBarColorDark() {
