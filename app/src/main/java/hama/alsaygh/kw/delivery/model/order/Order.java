@@ -8,6 +8,7 @@ import hama.alsaygh.kw.delivery.model.user.User;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -81,6 +82,8 @@ public class Order implements Serializable {
     }
 
     public List<Store> getPackaging_store_info() {
+        if(packaging_store_info==null)
+            packaging_store_info=new ArrayList<>();
         return packaging_store_info;
     }
 

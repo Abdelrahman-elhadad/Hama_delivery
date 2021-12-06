@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import hama.alsaygh.kw.delivery.R;
 import hama.alsaygh.kw.delivery.model.order.Order;
+import hama.alsaygh.kw.delivery.view.order.orderDetails.pakagingStoreInfo.PackagingInformationFragment;
 import hama.alsaygh.kw.delivery.view.order.orderDetails.userInfo.UserInformationFragment;
 import hama.alsaygh.kw.delivery.view.order.orderDetails.vendorInfo.VendorInformationFragment;
 
@@ -34,7 +35,7 @@ public class OrderTrackingPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return VendorInformationFragment.newInstance(order, status);
             case 1:
-                return UserInformationFragment.newInstance(order,status);
+                return PackagingInformationFragment.newInstance(order,status);
             case 2:
                 return UserInformationFragment.newInstance(order,status);
 
@@ -55,7 +56,7 @@ public class OrderTrackingPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return context.getString(R.string.Vendors_Information);
             case 1:
-                return   context.getString(R.string.User_Information);
+                return   context.getString(R.string.packaging_store);
             case 2:
                 return context.getString(R.string.User_Information);
             default:

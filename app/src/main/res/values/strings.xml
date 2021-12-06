@@ -81,5 +81,7 @@
     <string name="confirm_new_password">Confirm New Password</string>
     <string name="no_orders">No orders</string>
     <string name="user_name">User Name</string>
+    <string name="packaging_store">Packaging Store</string>
+    <string name="no_packaging_stores">No Packaging Stores</string>
 
 </resources>

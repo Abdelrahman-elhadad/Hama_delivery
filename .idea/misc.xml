@@ -26,7 +26,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/activity_map.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/activity_notifications.xml" value="0.2546875" />
-        <entry key="app/src/main/res/layout/activity_order_details.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_order_details.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_qr_delivery.xml" value="0.12760416666666666" />
         <entry key="app/src/main/res/layout/activity_qrscanner.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/card_active_order.xml" value="0.5" />
@@ -54,6 +54,7 @@
         <entry key="app/src/main/res/layout/order_tracking.xml" value="0.18194444444444444" />
         <entry key="app/src/main/res/layout/order_tracking_map_view.xml" value="0.13072916666666667" />
         <entry key="app/src/main/res/layout/orders_fragment.xml" value="0.10677083333333333" />
+        <entry key="app/src/main/res/layout/package_information_fragment.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/row_city_item.xml" value="0.335" />
         <entry key="app/src/main/res/layout/scan_code_to_deliver.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/tab_title.xml" value="0.2546875" />

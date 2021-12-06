@@ -55,9 +55,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="10dp"
             android:clipToPadding="false"
             app:cardCornerRadius="4dp"
             app:cardElevation="0dp">
@@ -70,13 +70,20 @@
                 app:tabIndicatorColor="#00ffffff"
                 app:tabIndicatorFullWidth="false"
                 app:tabSelectedTextColor="@color/white"
-                app:tabTextColor="@color/color_store_page">
+                app:tabTextColor="@color/color_store_page"
+                app:tabTextAppearance="@style/MyTabLayoutTextAppearance">
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/vendor_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Vendors_Information" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/package_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/packaging_store" />
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/user_info"
