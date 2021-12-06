@@ -2,6 +2,7 @@ package hama.alsaygh.kw.delivery.view.profile;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -45,6 +46,12 @@ public class MyProfileFragment extends BaseFragment {
             Picasso.get().load(avatar).placeholder(R.drawable.ic_default_user).error(R.drawable.ic_default_user).transform(new CircleTransform()).into(binding.ivProfile);
         } else
             Picasso.get().load(R.drawable.ic_default_user).placeholder(R.drawable.ic_default_user).error(R.drawable.ic_default_user).into(binding.ivProfile);
+
+        binding.rbUser.setOnTouchListener(new View.OnTouchListener() {
+            public boolean onTouch(View v, MotionEvent event) {
+                return true;
+            }
+        });
     }
 
 }
